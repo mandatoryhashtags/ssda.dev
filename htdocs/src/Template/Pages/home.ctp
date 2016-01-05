@@ -45,6 +45,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <h1>Get the Ovens Ready</h1>
         </div>
     </header>
+    <div class="top-nav">
+        <ul class="side-nav">
+            <li class="heading"><?= __('Actions') ?></li>
+            <li><?= $this->Html->link(__('List Students'), ['controller' => 'Students', 'action' => 'index']) ?></li>
+            <li><?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?></li>
+            <li><?= $this->Html->link(__('List Sessions'), ['controller' => 'Sessions', 'action' => 'index']) ?></li>
+        </ul>
+    </div>
     <div id="content">
         <div class="row">
             <?php Debugger::checkSecurityKeys(); ?>

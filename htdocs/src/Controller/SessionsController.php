@@ -7,11 +7,11 @@ use App\Controller\AppController;
  * Sessions Controller
  *
  * @property \App\Model\Table\SessionsTable $Sessions
- * @property \App\Model\Table\CoursesTable $Courses
  */
 class SessionsController extends AppController
 {
 
+    public $Courses = null;
     /**
      * Index method
      *
@@ -123,16 +123,16 @@ class SessionsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    /**
+     *
+     * @param null $id
+     */
     public function time($id = null)
     {
-        $duration = $this->Sessions->find('all', [
-            'conditions' => ['Sessions.student_id =' => $id],
-            'fields' => ['duration'],
-            'limit' => 10
-        ]);
+        $sessions = $this->Sessions->find('all',['conditions' => ['Sessions.student_id =' => $id]]);
         $student = $this->Sessions->Students->get($id);
-        $this->set(compact('duration', 'student'));
-        $this->set('_serialize', ['duration']);
+        $this->set(compact('student', 'sessions'));
+        $this->set('_serialize', ['sessions']);
     }
 
     public function total()

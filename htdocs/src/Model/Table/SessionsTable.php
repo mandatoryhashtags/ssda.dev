@@ -5,6 +5,7 @@ use App\Model\Entity\Session;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
+use Cake\ORM\TableRegistry;
 use Cake\Validation\Validator;
 
 /**
@@ -15,6 +16,7 @@ use Cake\Validation\Validator;
 class SessionsTable extends Table
 {
 
+    public $Courses = null;
     /**
      * Initialize method
      *
@@ -36,9 +38,9 @@ class SessionsTable extends Table
             'joinType' => 'INNER'
         ]);
 
-        $this->belongsToMany('Courses',[
-            'joinTable' => 'courses'
-        ]);
+        //join on Courses table
+        $this->Courses = TableRegistry::get('Courses');
+
     }
 
     /**

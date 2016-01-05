@@ -4,6 +4,8 @@
         <li><?= $this->Html->link(__('New Student'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Sessions'), ['controller' => 'Sessions', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Session'), ['controller' => 'Sessions', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Total Time'), ['controller' => 'Sessions', 'action' => 'total']) ?></li>
+        <li><?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="students index large-9 medium-8 columns content">

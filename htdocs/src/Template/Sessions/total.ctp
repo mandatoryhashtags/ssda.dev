@@ -2,7 +2,6 @@
 $studentArray = array();
 
 ?>
-
 <?php foreach($sessions as $session) :?>
     <?php if(!array_key_exists($session->student_id,$studentArray)) :?>
             <?php $studentArray[$session->student_id] = $session->duration ?>
