@@ -1,15 +1,9 @@
+<?php $this->layout = 'standard';?>
 <?php $totalTime = null; ?>
 <?php foreach($sessions as $session) :?>
 <?php $totalTime += $session->duration ?>
 <?php endforeach?>
 
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Sessions'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('List Students'), ['controller' => 'Students', 'action' => 'index']) ?> </li>
-    </ul>
-</nav>
 <div class="sessions view large-9 medium-8 columns content">
     <h3><?= h($student->name) ?></h3>
     <table class="vertical-table">

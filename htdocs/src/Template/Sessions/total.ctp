@@ -1,3 +1,4 @@
+<?php $this->layout = 'standard';?>
 <?php
 $studentArray = array();
 
@@ -9,13 +10,6 @@ $studentArray = array();
             <?php $studentArray[$session->student_id] += $session->duration ?>
         <?php endif;?>
 <?php endforeach ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Sessions'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('List Students'), ['controller' => 'Students', 'action' => 'index']) ?> </li>
-    </ul>
-</nav>
 
 <div class="sessions index large-9 medium-8 columns content">
     <h3><?= __('Total Training Time') ?></h3>
